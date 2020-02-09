@@ -1,8 +1,8 @@
 {
   "name": "s3-bucket-stream",
   "version": "0.1.0",
-  "description": "Readable stream of all objects in a given set of S3 buckets in lexigraphical order with resume ability.",
-  "main": "index.js",
+  "description": "Readable stream of all objects in a given set of S3 buckets in lexicographical order.",
+  "main": "build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,5 +25,13 @@
   "bugs": {
     "url": "https://github.com/sunnypurewal/s3bucketstream/issues"
   },
-  "homepage": "https://github.com/sunnypurewal/s3bucketstream#readme"
+  "homepage": "https://github.com/sunnypurewal/s3bucketstream#readme",
+  "dependencies": {
+    "aws-sdk": "^2.614.0"
+  },
+  "devDependencies": {
+    "@types/aws-sdk": "^2.7.0",
+    "@types/node": "^13.7.0",
+    "typescript": "^3.7.5"
+  }
 }
