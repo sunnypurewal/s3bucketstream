@@ -1,6 +1,6 @@
 {
   "name": "s3-bucket-stream",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Readable stream of all objects in a given set of S3 buckets in lexicographical order.",
   "main": "build/index.js",
   "scripts": {
