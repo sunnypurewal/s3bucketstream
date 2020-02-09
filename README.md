@@ -77,3 +77,28 @@ const main = async () => {
 }
 main()
 ```
+
+# API Reference
+
+## Batch
+
+`BatchStream` and `generateBatch` will return the following object:
+```
+{
+  Key: string
+  Bucket: String
+  Body: string
+}
+```
+
+## Key
+
+`KeyStream` and `generateKeys` will return the following object
+```
+{
+  Bucket: string
+  Keys: string[]
+}
+```
+
+Note that use of capitalization in the field names to match the `aws-sdk` interface.
