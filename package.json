@@ -1,0 +1,29 @@
+{
+  "name": "s3-bucket-stream",
+  "version": "0.1.0",
+  "description": "Readable stream of all objects in a given set of S3 buckets in lexigraphical order with resume ability.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sunnypurewal/s3bucketstream.git"
+  },
+  "keywords": [
+    "s3",
+    "aws",
+    "bucket",
+    "stream",
+    "objects",
+    "getobjects",
+    "listobjectsv2",
+    "listobjects"
+  ],
+  "author": "Sunny Purewal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sunnypurewal/s3bucketstream/issues"
+  },
+  "homepage": "https://github.com/sunnypurewal/s3bucketstream#readme"
+}
