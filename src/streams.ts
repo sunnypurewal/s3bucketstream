@@ -1,4 +1,4 @@
-import { generateBatch, generateKeys } from "./aws/generators"
+import { generateBatch, generateKeys } from "./generators"
 const { Readable } = require("stream")
 import { cpus } from "os"
 

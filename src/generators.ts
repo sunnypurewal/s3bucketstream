@@ -1,5 +1,5 @@
-import { list } from "./awslib"
-import { getBatch } from "./awsbatch"
+import { list } from "./aws/awslib"
+import { getBatch } from "./aws/awsbatch"
 import fs from "fs"
 
 let keysPath: string|undefined = undefined

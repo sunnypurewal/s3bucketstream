@@ -1,7 +1,6 @@
-import { generateBatch, generateKeys } from "./bws/generators"
+import { generateBatch, generateKeys } from "./local_generators"
 const { Readable } = require("stream")
 import { cpus } from "os"
-
 
 export function KeyStream(Bucket: string, MaxKeys = 1000, highWaterMark: number = cpus().length - 1) {
   return Readable.from(generateKeys(Bucket, MaxKeys), { highWaterMark })

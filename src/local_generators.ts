@@ -1,5 +1,5 @@
-import { list } from "./awslib"
-import { getBatch } from "./awsbatch"
+import { list } from "./bws/awslib"
+import { getBatch } from "./bws/awsbatch"
 import fs from "fs"
 
 let keysPath: string|undefined = undefined
@@ -30,7 +30,9 @@ export async function* generateKeys(Bucket: string, MaxKeys: number = 1000) {
   while (Keys.length === MaxKeys) {
     Keys = await list(Bucket, StartAfter, MaxKeys)
     StartAfter = Keys.slice(-1)[0]
-    yield { Bucket, Keys }
+    if (Keys.length > 0) {
+      yield { Bucket, Keys }
+    }
   }
   StartAfter = undefined
 }
