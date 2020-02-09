@@ -1,6 +1,6 @@
 {
   "name": "s3-bucket-stream",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Readable stream of the Body of every object in an S3 bucket.",
   "main": "build/index.js",
   "scripts": {
