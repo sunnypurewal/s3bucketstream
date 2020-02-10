@@ -27,7 +27,7 @@ readableStream.once("readable", read)
 const { generateBatch } = require("s3-bucket-stream")
 
 const main = async () => {
-  let generator = localGenerateBatch("listings0", /* MaxKeys = 1000 */)
+  let generator = generateBatch("BucketNameGoesHere", /* MaxKeys = 1000 */)
   for await (let item of gen) {
     console.log(item)
   }
