@@ -2,6 +2,8 @@
 
 # Usage
 
+You must provide aws credentials using [a credentials file](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/loading-node-credentials-shared.html) or [another method](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html)
+
 ```
 const { BatchStream } = require("s3-bucket-stream")
 
