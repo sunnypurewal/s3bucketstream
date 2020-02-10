@@ -2,7 +2,6 @@ import AWS from "aws-sdk"
 import S3Object from "./s3object"
 const s3 = new AWS.S3()
 
-s3.getObject()
 export async function get(Bucket: string, Key: string): Promise<S3Object> {
   return new Promise((resolve, reject) => {
     let params = {
