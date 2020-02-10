@@ -32,7 +32,6 @@
   "devDependencies": {
     "@types/aws-sdk": "^2.7.0",
     "@types/node": "^13.7.0",
-    "typescript": "^3.7.5",
-    "s3-bucket-stream": "file:./"
+    "typescript": "^3.7.5"
   }
 }
