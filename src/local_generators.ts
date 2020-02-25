@@ -24,11 +24,20 @@ export async function* generateKeys(Bucket: string, MaxKeys: number = 1000) {
       // console.log(`Found existing progress, continuing from ${StartAfter}`)
     }
   }
-  let Keys = await list(Bucket, StartAfter, MaxKeys)
-  StartAfter = Keys.slice(-1)[0]
-  yield { Bucket, Keys }
-  while (Keys.length === MaxKeys) {
+  let Keys = null
+  try {
     Keys = await list(Bucket, StartAfter, MaxKeys)
+    StartAfter = Keys.slice(-1)[0]
+    yield { Bucket, Keys }
+  } catch {
+    return
+  }
+  while (Keys.length === MaxKeys) {
+    try {
+      Keys = await list(Bucket, StartAfter, MaxKeys)
+    } catch {
+      continue
+    }
     StartAfter = Keys.slice(-1)[0]
     if (Keys.length > 0) {
       yield { Bucket, Keys }
@@ -39,7 +48,11 @@ export async function* generateKeys(Bucket: string, MaxKeys: number = 1000) {
 
 export async function* generateBatch(Bucket: string, MaxKeys:number = 1000) {
   for await (let keygen of generateKeys(Bucket, MaxKeys)) {
-    let batch = await getBatch(keygen.Bucket, keygen.Keys)
-    yield batch
+    try {
+      let batch = await getBatch(keygen.Bucket, keygen.Keys)
+      yield batch
+    } catch {
+      continue
+    }
   }
 }
