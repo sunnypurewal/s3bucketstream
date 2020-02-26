@@ -2,7 +2,7 @@ import { list } from "./aws/awslib"
 import { getBatch } from "./aws/awsbatch"
 import fs from "fs"
 
-let keysPath: string|undefined = undefined
+let keysPath: string|undefined = "./keys"
 
 export async function* generateKeys(Bucket: string, MaxKeys: number = 1000) {
   let StartAfter: string | undefined = undefined
@@ -21,7 +21,7 @@ export async function* generateKeys(Bucket: string, MaxKeys: number = 1000) {
     }
     if (progress !== undefined && progress.length > 0) {
       StartAfter = progress
-      // console.log(`Found existing progress, continuing from ${StartAfter}`)
+      console.log(`Found existing progress, continuing from ${StartAfter}`)
     }
   }
   let Keys = null
